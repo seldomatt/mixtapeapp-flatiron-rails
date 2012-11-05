@@ -3,4 +3,6 @@ class Mixtape < ActiveRecord::Base
 
   has_many :user_mixtapes
   has_many :users, :through => :user_mixtapes
+  has_many :mixtape_songs
+  has_many :songs, :through => :mixtape_songs
 end
