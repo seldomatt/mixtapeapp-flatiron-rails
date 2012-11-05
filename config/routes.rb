@@ -1,4 +1,16 @@
 Mixtapeapp::Application.routes.draw do
+  resources :mixtapes
+
+  resources :users
+
+  resources :genres
+
+  resources :albums
+
+  resources :artists
+
+  resources :songs
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
