@@ -1,4 +1,4 @@
-class UserMixtapes < ActiveRecord::Base
+class UserMixtape < ActiveRecord::Base
   attr_accessible :mixtape_id, :user_id
 
   belongs_to :user
