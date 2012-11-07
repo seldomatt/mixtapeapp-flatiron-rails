@@ -25,4 +25,36 @@ describe Song do
 
   end
 
+  context 'with genres' do 
+    let(:genre){Genre.create(:name => "Pop")}
+
+    context '.genre_names' do 
+
+      it "should return an array of genre names" do 
+        song.add_genre("Pop")
+        song.save
+        song.genre_names.should be_an_instance_of(Array)
+        song.genre_names.should include("Pop")
+      end
+
+      it "should accept a comma delimited list of genre names" do 
+        song.add_genre("Pop")
+        song.add_genre("Techno")
+        song.save
+        song.genre_names.should include("Pop", "Techno")
+      end
+    end
+
+    context '.genre_names=' do 
+
+      it "should accept a genre name and add that genre" do 
+        song.genre_names=("Techno")
+        song.save
+        song.genre_names.should include("Techno")
+      end
+
+    end
+
+  end
+
 end

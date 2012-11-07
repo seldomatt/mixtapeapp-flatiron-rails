@@ -1,5 +1,5 @@
 class SongGenre < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :genre
 
   belongs_to :song 
   belongs_to :genre

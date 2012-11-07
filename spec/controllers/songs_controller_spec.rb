@@ -14,5 +14,12 @@ describe SongsController do
 
       assigns(:song).artist.name.should == "Michael Jackson"
     end
+
+    it 'should create a song with a genre' do 
+      post :create, {:song => {:name => "Thriller", :genre_names => "Pop"}}
+
+      assigns(:song).genres.find_by_name("Pop")
+      assigns(:song).genre_names.should include("Pop")
+    end
   end
 end

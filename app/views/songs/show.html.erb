@@ -4,7 +4,9 @@
   <b>Name:</b>
   <%= @song.name %></br>
   <b>Artist:</b>
-  <%= @song.artist_name %>
+  <%= @song.artist_name %></br>
+  <b>Genres:</b>
+  <%= @song.genre_names.to_sentence %>
 </p>
 
 
